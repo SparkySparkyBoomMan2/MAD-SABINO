@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
 {
 
     public float speed;
+    private float xMin = -0.05f, xMax = 0.05f, yMin = -0.05f, yMax = 0.05f;
     
     public int score;
     // Start is called before the first frame update
@@ -23,10 +24,16 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        float horizontal = Input.GetAxis("Horizontal");
-        float vertical = Input.GetAxis("Vertical");
+        float xAxis = Input.GetAxis("Horizontal");
+        float yAxis = Input.GetAxis("Vertical");
 
-        Vector3 movement = new Vector3(horizontal, 0.0f, vertical);
+        float clampedXAxis = Mathf.Clamp(xAxis, xMin, xMax);
+        float clampedYAxis = Mathf.Clamp(yAxis, yMin, yMax);
+
+        Debug.Log("clampedXAxis: " + clampedXAxis);
+        Debug.Log("clampedYAxis: " + clampedYAxis);
+
+        Vector3 movement = new Vector3(clampedXAxis, 0.0f, clampedYAxis);
         GetComponent<Rigidbody>().AddForce(movement*speed*Time.deltaTime);
     }
 
