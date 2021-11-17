@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.UI;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class BallMovement : MonoBehaviour
 {
 
     public float speed;
@@ -30,19 +29,10 @@ public class PlayerMovement : MonoBehaviour
         float clampedXAxis = Mathf.Clamp(xAxis, xMin, xMax);
         float clampedYAxis = Mathf.Clamp(yAxis, yMin, yMax);
 
-        Debug.Log("clampedXAxis: " + clampedXAxis);
-        Debug.Log("clampedYAxis: " + clampedYAxis);
+        // Debug.Log("clampedXAxis: " + clampedXAxis);
+        // Debug.Log("clampedYAxis: " + clampedYAxis);
 
         Vector3 movement = new Vector3(clampedXAxis, 0.0f, clampedYAxis);
         GetComponent<Rigidbody>().AddForce(movement*speed*Time.deltaTime);
-    }
-
-    void OnTriggerEnter(Collider other)
-    {
-        if(other.tag == "Coin")
-        {
-            score++;
-            other.gameObject.SetActive(false);
-        }
     }
 }
