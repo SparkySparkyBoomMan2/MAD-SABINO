@@ -1,0 +1,11 @@
+Model Information:
+* title:	L-X3-B Bionic Arm
+* source:	https://sketchfab.com/3d-models/l-x3-b-bionic-arm-6a885eee2c114b6c9e1f7a0968333beb
+* author:	aborkowskigraphics (https://sketchfab.com/aborkowskigraphics)
+
+Model License:
+* license type:	CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)
+* requirements:	Author must be credited. No commercial use.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "L-X3-B Bionic Arm" (https://sketchfab.com/3d-models/l-x3-b-bionic-arm-6a885eee2c114b6c9e1f7a0968333beb) by aborkowskigraphics (https://sketchfab.com/aborkowskigraphics) licensed under CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)
