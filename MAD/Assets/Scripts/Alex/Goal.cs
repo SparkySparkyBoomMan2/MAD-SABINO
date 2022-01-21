@@ -18,9 +18,10 @@ public class Goal : MonoBehaviour
 
     void OnTriggerEnter(Collider col)
     {
-        if(col.tag == "Goal")
+        Debug.Log("Name is" + col.name);
+        if(col.tag == "User Hand")
         {
-            
+            Debug.Log("Name is" + col.name);
         }
     }
 }
