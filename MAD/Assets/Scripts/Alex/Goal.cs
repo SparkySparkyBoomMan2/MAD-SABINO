@@ -18,8 +18,8 @@ public class Goal : MonoBehaviour
 
     void OnTriggerEnter(Collider col)
     {
-        Debug.Log("Name is" + col.name);
-        if(col.tag == "User Hand")
+        Debug.Log("Name is:[" + col.name + "]");
+        if(col.tag == "UserHand")
         {
             Debug.Log("Name is" + col.name);
         }

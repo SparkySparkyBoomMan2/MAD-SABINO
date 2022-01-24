@@ -4,19 +4,31 @@ using UnityEngine;
 
 public class UserHand : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
+    private GameObject handBone;
+    private Transform handDetector;
+ 
+    private Vector3 handBoneLastPosition;
+    public string handBonePath;
 
-    }
+    // void Awake() {
+    //     AssignObjects();
+    // }
 
-    // Update is called once per frame
-    void Update()
-    {
-        var handBone = GameObject.Find("PlayerArmature/Skeleton/Hips/Spine/Chest/UpperChest/Right_Shoulder/Right_UpperArm/Right_LowerArm/Right_Hand");
-        
-        var userHandGoal = this.transform;
+    // // Update is called once per frame
+    // void Update()
+    // {
+    //     if(handDetector.position != handBoneLastPosition) {
+    //         UpdatePosition();
+    //     }   
+    // }
 
-        userHandGoal.position = handBone.transform.position;
-    }
+    // void AssignObjects() {
+    //     handBone = GameObject.Find(handBonePath); //Performance implication?
+    //     handDetector = this.transform;
+    // }
+
+    // void UpdatePosition() {
+    //     handBoneLastPosition = handBone.transform.position;
+    //     handDetector.position = handBone.transform.position;
+    // }
 }
