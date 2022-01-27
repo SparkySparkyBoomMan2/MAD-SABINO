@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Goal : MonoBehaviour
+public class Starting : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -21,7 +21,7 @@ public class Goal : MonoBehaviour
         // Debug.Log("Name is:[" + col.name + "]");
         if(col.tag == "UserHand")
         {
-            Debug.Log("[" + col.name + "] is touching the goal sphere!");
+            Debug.Log("[" + col.name + "] is interacting with the start sphere");
         }
     }
 }

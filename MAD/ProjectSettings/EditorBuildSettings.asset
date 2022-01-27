@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Alex/HomeScene.unity
+    guid: 164e0cb0851ba4943bc9e4bff2322520
+  - enabled: 1
+    path: Assets/Scenes/Alex/PointToPointScene.unity
+    guid: bf2cd34c97f66504db4cf15b019545e2
   m_configObjects: {}
