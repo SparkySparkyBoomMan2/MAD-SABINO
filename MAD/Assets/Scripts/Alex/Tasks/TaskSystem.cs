@@ -6,17 +6,20 @@ public class TaskSystem : Singleton
 {
     void Start()
     {
+        // On start, get all scenes in the build settings, and add to a list
         GetAllScenes(sceneListInBuild);
     }
 
-    // This will need to be attatched to the main hierarchy, and be the DONT DESTROY ON LOAD
-    public string taskName = ""; // Name of the basic task
-    public int repeatNumber = 0; // Optional number of times to repeat the task
+    // Possibly strip down the Task Manger to mainly have these big functions
+    
+    // And then when a certain scene is loaded, pass in certain variables and settings to a new script
+    // that is not a singleton??????????????????????????????????????????????????????????????????????
 
-    public int time;
-    public bool useTable = true;
-
-    public string sceneName; // Name of the scene/task to load
+    // Name of the task to be displayed to the user
+    public string taskName = "";
+    
+    // Optional number of times to repeat the task
+    public int repeatNumber = 0; 
 
     // These will all be positions, relative to their original locations
     // - i.e., if we have a table, then the goal will start in the middle of the table, and changes to the vector3 will move it accordingly from that starting position
@@ -24,46 +27,59 @@ public class TaskSystem : Singleton
     public Vector3 homePosition;
     public Vector3 startPosition;
 
-    // Private list to hold all scnene names
+    // Private list to store all scenes in the build settings
+    // - Static, so there is only one instance of this List and it is shared
     private static List<string> sceneListInBuild = new List<string>();
+
+
+    // Loads a specifc task scene, if it exists in the build settings
+    // ***** SCENE MUST BE IN BUILD SETTINGS TO WORK *****
+    public void LoadTask(string targetScene)
+    {
+        // foreach (var sName in sceneListInBuild)
+        // {
+        //     Debug.Log(sName);
+        // }
+
+        //Only attempt to load the scene if a taskName has been given
+        if(sceneListInBuild.Contains(targetScene)) { 
+            StartCoroutine(LoadSceneAsync(targetScene));
+            return;
+        }
+
+        Debug.LogErrorFormat("Task System: [" + targetScene + "] is NOT a scene in build settings");
+    }
 
     // Inspired heavily from...
     // http://answers.unity.com/answers/1394340/view.html
+    // Loop through all scenes in the build settings, and add the scene names to a list
+    // ... passed in as an argument
     private void GetAllScenes(List<string> sceneList) 
     {
         int sceneCount = SceneManager.sceneCountInBuildSettings;
+        
+        // For each scene
         for(int i = 0; i < sceneCount; i++) 
         {
+            // - find the path which the scene in the build settings is stored at
             string scenePath = SceneUtility.GetScenePathByBuildIndex(i);
+
+            // - serach the path, to find the index of the final level the actual scene is stored at
             int slashIndex = scenePath.LastIndexOf("/");
+
+            // - take a substring of the scene name from "/SceneTest.blah", to "SceneTest"
+            // - ... and add it to the list
             sceneListInBuild.Add(scenePath.Substring(slashIndex+1, scenePath.LastIndexOf(".") - slashIndex-1));
         }
     }
 
-    // Loads the selected task and unloads the current scene
-    // MAKE SURE WE ADD SCENES TO THE BUILD SETTIGNS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-    // OR THIS WONT WORK
-    public void LoadTask(string targetScene="")
-    {
-        foreach (var sName in sceneListInBuild)
-        {
-            Debug.Log(sName);
-        }
-        if (targetScene.Length > 0)
-            sceneName = targetScene;
-
-        if(sceneListInBuild.Contains(sceneName)) { //Only attempt to load the scene if a taskName has been given
-            // SceneManager.LoadScene(sceneName);
-            StartCoroutine(LoadSceneAsync(sceneName));
-            return;
-        }
-
-        Debug.LogErrorFormat("Task System: [" + sceneName + "] is NOT a scene in build settings");
-    }
-
+    // Loads a scene correpsonding to the name passed in, asynchronously
     private IEnumerator LoadSceneAsync(string sceneName)
     {
+        // Begin loading the scene asynchonously
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName);
+        
+        // Wait for the scene to finish loading
         while(!asyncLoad.isDone)
         {
             yield return null;

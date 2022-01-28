@@ -5,17 +5,19 @@ using UnityEngine.UI;
 
 public class ButtonScript : MonoBehaviour
 {
-    // Defined in the inspector
+    // Tag which is set on the TaskSystem object; set in inspector
     public string taskSystemTag;
 
-    // Not defined in inspector
     void Start()
     {
         // Get reference to TaskSystem Class and the button compontent of this button object
+        // - (taskSystem) This should always be present, as it is in "DontDestroyOnLoad"
         TaskSystem taskSystem = GameObject.FindWithTag("TaskSystem").GetComponent<TaskSystem>();
         Button button = GetComponent<Button>();
 
-        // Get the text (name of the scene pointing to) From the button's first child, Text,
+        // The child of this object SHOULD be a Text object
+        // - access the "text" field of this Text object, and store it
+        // - buttonText will correspond both to what the user sees, and what the scene is named
         string buttonText = button.GetComponentInChildren<Text>().text;
 
         // If either lookup(s) fial, then return and log error message
