@@ -9,6 +9,7 @@ TagManager:
   - CinemachineTarget
   - Point-To-Point Goal
   - UserHand
+  - TaskSystem
   layers:
   - Default
   - TransparentFX

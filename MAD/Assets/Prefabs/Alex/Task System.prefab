@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 966885675885280857}
   m_Layer: 0
   m_Name: Task System
-  m_TagString: Untagged
+  m_TagString: TaskSystem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -43,9 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce21d36986907db44bd815df193e2d6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goal: {fileID: 596416502989790819, guid: 9afa797fff9ae4249853e96cfc60c1a7, type: 3}
-  home: {fileID: 0}
-  start: {fileID: 0}
   taskName: 
   repeatNumber: 0
   time: 0

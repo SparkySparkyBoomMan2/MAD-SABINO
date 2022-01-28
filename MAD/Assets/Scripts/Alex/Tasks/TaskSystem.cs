@@ -6,7 +6,7 @@ public class TaskSystem : Singleton
 {
     void Start()
     {
-        getAllScenes(sceneListInBuild);
+        GetAllScenes(sceneListInBuild);
     }
 
     // This will need to be attatched to the main hierarchy, and be the DONT DESTROY ON LOAD
@@ -29,7 +29,7 @@ public class TaskSystem : Singleton
 
     // Inspired heavily from...
     // http://answers.unity.com/answers/1394340/view.html
-    private void getAllScenes(List<string> sceneList) 
+    private void GetAllScenes(List<string> sceneList) 
     {
         int sceneCount = SceneManager.sceneCountInBuildSettings;
         for(int i = 0; i < sceneCount; i++) 
@@ -43,7 +43,7 @@ public class TaskSystem : Singleton
     // Loads the selected task and unloads the current scene
     // MAKE SURE WE ADD SCENES TO THE BUILD SETTIGNS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     // OR THIS WONT WORK
-    public void loadTask(string targetScene="")
+    public void LoadTask(string targetScene="")
     {
         foreach (var sName in sceneListInBuild)
         {
@@ -53,16 +53,20 @@ public class TaskSystem : Singleton
             sceneName = targetScene;
 
         if(sceneListInBuild.Contains(sceneName)) { //Only attempt to load the scene if a taskName has been given
-            SceneManager.LoadScene(sceneName);
+            // SceneManager.LoadScene(sceneName);
+            StartCoroutine(LoadSceneAsync(sceneName));
             return;
         }
 
-        logError("[" + sceneName + "] is NOT a scene in build settings");
+        Debug.LogErrorFormat("Task System: [" + sceneName + "] is NOT a scene in build settings");
     }
-    
-    private void logError(string errorMsg)
+
+    private IEnumerator LoadSceneAsync(string sceneName)
     {
-        string taskError = "Task System ERROR: ";
-        Debug.Log(taskError + errorMsg);
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName);
+        while(!asyncLoad.isDone)
+        {
+            yield return null;
+        }
     }
 }
