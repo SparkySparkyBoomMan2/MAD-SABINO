@@ -10,22 +10,13 @@ public class TaskSystem : Singleton
         GetAllScenes(sceneListInBuild);
     }
 
-    // Possibly strip down the Task Manger to mainly have these big functions
-    
-    // And then when a certain scene is loaded, pass in certain variables and settings to a new script
-    // that is not a singleton??????????????????????????????????????????????????????????????????????
+    public static int repeatNumber = 0;     // Optional number of times to repeat the task
 
-    // Name of the task to be displayed to the user
-    public string taskName = "";
-    
-    // Optional number of times to repeat the task
-    public int repeatNumber = 0; 
-
-    // These will all be positions, relative to their original locations
-    // - i.e., if we have a table, then the goal will start in the middle of the table, and changes to the vector3 will move it accordingly from that starting position
-    public Vector3 goalPosition;
-    public Vector3 homePosition;
-    public Vector3 startPosition;
+    // // These will all be positions, relative to their original locations
+    // // - i.e., if we have a table, then the goal will start in the middle of the table, and changes to the vector3 will move it accordingly from that starting position
+    // public Vector3 goalPosition;
+    // public Vector3 homePosition;
+    // public Vector3 startPosition;
 
     // Private list to store all scenes in the build settings
     // - Static, so there is only one instance of this List and it is shared

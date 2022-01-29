@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class ButtonScript : MonoBehaviour
 {
     // Tag which is set on the TaskSystem object; set in inspector
-    public string taskSystemTag;
-
+    [SerializeField]
+    private string taskSystemTag;
     void Start()
     {
         // Get reference to TaskSystem Class and the button compontent of this button object
@@ -23,7 +23,7 @@ public class ButtonScript : MonoBehaviour
         // If either lookup(s) fial, then return and log error message
         if(taskSystem == null || button == null || buttonText == null)
         {
-            Debug.Log("Task System ERROR: button.onclick() has null component(s)");
+            Debug.Log("Task System ERROR: button.onClick() has a null component(s)");
             return;
         }
 
