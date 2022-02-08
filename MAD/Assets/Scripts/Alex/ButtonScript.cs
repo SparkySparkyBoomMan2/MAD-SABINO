@@ -12,10 +12,10 @@ public class ButtonScript : MonoBehaviour
         // Get a reference to this object's button component
         Button thisButton = GetComponent<Button>();
 
-        // Set the text to the name of the task
+        // Set the text of the button to the name of the task
         thisButton.GetComponentInChildren<Text>().text = task.taskName;
         
-        // Set the onclick function to load the task scene
+        // Set the onclick function of the button to load the task scene
         thisButton.onClick.AddListener(() => task.invokeTaskEvent());
     }
 }
