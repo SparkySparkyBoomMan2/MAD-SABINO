@@ -5,31 +5,17 @@ using UnityEngine.UI;
 
 public class ButtonScript : MonoBehaviour
 {
-    // Tag which is set on the TaskSystem object; set in inspector
-    [SerializeField]
-    private string taskSystemTag;
+    // Task object assigned in inspector
+    public Task task;
     void Start()
     {
-        // Get reference to TaskSystem Class and the button compontent of this button object
-        // - (taskSystem) This should always be present, as it is in "DontDestroyOnLoad"
-        TaskSystem taskSystem = GameObject.FindWithTag("TaskSystem").GetComponent<TaskSystem>();
-        Button button = GetComponent<Button>();
+        // Get a reference to this object's button component
+        Button thisButton = GetComponent<Button>();
 
-        // The child of this object SHOULD be a Text object
-        // - access the "text" field of this Text object, and store it
-        // - buttonText will correspond both to what the user sees, and what the scene is named
-        string buttonText = button.GetComponentInChildren<Text>().text;
-
-        // If either lookup(s) fial, then return and log error message
-        if(taskSystem == null || button == null || buttonText == null)
-        {
-            Debug.Log("Task System ERROR: button.onClick() has a null component(s)");
-            return;
-        }
-
-        // Add the Task System Class --> loadTask() function on click of the button
-        // - Uses lambada functions
-        // - https://forum.unity.com/threads/why-wont-onclick-addlistener-accept-a-field.357791/
-        button.onClick.AddListener(() => taskSystem.LoadTask(buttonText));
+        // Set the text to the name of the task
+        thisButton.GetComponentInChildren<Text>().text = task.taskName;
+        
+        // Set the onclick function to load the task scene
+        thisButton.onClick.AddListener(() => task.invokeTaskEvent());
     }
 }

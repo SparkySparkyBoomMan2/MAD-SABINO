@@ -1,31 +1,36 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 using UnityEngine.SceneManagement;
+
 public class TaskSystem : Singleton
 {
-    void Start()
+    private void Start()
     {
         // On start, get all scenes in the build settings, and add to a list
         GetAllScenes(sceneListInBuild);
+        onLoadSceneEvent += LoadScene; // Subscribe the load scene method to the load scene event
     }
-
-    public static int repeatNumber = 0;     // Optional number of times to repeat the task
-
-    // // These will all be positions, relative to their original locations
-    // // - i.e., if we have a table, then the goal will start in the middle of the table, and changes to the vector3 will move it accordingly from that starting position
-    // public Vector3 goalPosition;
-    // public Vector3 homePosition;
-    // public Vector3 startPosition;
 
     // Private list to store all scenes in the build settings
     // - Static, so there is only one instance of this List and it is shared
     private static List<string> sceneListInBuild = new List<string>();
 
+    // Events?
+    public static event Action<string> onLoadSceneEvent; // Define event that gets "broadcasted"
+    public static void LoadSceneEvent(string scene) // method that "broadcasts" the event
+    {
+        if(onLoadSceneEvent != null) // if there is at least one observer subscribed to the event
+        {
+            onLoadSceneEvent(scene); // broadcast the event
+        }
+    }
+
 
     // Loads a specifc task scene, if it exists in the build settings
     // ***** SCENE MUST BE IN BUILD SETTINGS TO WORK *****
-    public void LoadTask(string targetScene)
+    private void LoadScene(string targetScene)
     {
         // foreach (var sName in sceneListInBuild)
         // {
