@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 891653671067714683}
   - component: {fileID: 891653671067714690}
   - component: {fileID: 891653671067714693}
+  - component: {fileID: 3603231874839410573}
   - component: {fileID: 3730228078272976513}
   m_Layer: 0
   m_Name: Goal
@@ -30,7 +31,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 891653671067714692}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.3, y: 9.76, z: -9.181}
+  m_LocalPosition: {x: -0.232, y: 10.014, z: -9.26}
   m_LocalScale: {x: 0.24936129, y: 0.24936129, z: 0.24936129}
   m_Children: []
   m_Father: {fileID: 0}
@@ -126,6 +127,144 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 061b0e56596a81c43a3b9b3ac0d3802b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  goalEvent: {fileID: 11400000, guid: 952f78a03ae4cd84d9d8246b056136c4, type: 2}
+  goalReset: {fileID: 11400000, guid: e0d759213d3930649835ddfc3550d1b4, type: 2}
+--- !u!114 &3603231874839410573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 891653671067714692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62e291a4002722a408c6a8609d4f6b5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventAndResponses:
+  - name: Reset Goal
+    gameEvent: {fileID: 11400000, guid: e0d759213d3930649835ddfc3550d1b4, type: 2}
+    response:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3730228078272976513}
+          m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+          m_MethodName: set_enabled
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 891653671067714682}
+          m_TargetAssemblyTypeName: UnityEngine.Renderer, UnityEngine
+          m_MethodName: set_material
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 8ca3f318f59ea4d468bbe3145bc30d76, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+    responseForSentString:
+      m_PersistentCalls:
+        m_Calls: []
+    responseForSentInt:
+      m_PersistentCalls:
+        m_Calls: []
+    responseForSentFloat:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3730228078272976513}
+          m_TargetAssemblyTypeName: UnityEngine.Light, UnityEngine
+          m_MethodName: set_intensity
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    responseForSentBool:
+      m_PersistentCalls:
+        m_Calls: []
+  - name: Go To Goal
+    gameEvent: {fileID: 11400000, guid: 03be5b0638c0e8344bab252dd62c821d, type: 2}
+    response:
+      m_PersistentCalls:
+        m_Calls: []
+    responseForSentString:
+      m_PersistentCalls:
+        m_Calls: []
+    responseForSentInt:
+      m_PersistentCalls:
+        m_Calls: []
+    responseForSentFloat:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3730228078272976513}
+          m_TargetAssemblyTypeName: UnityEngine.Light, UnityEngine
+          m_MethodName: set_intensity
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    responseForSentBool:
+      m_PersistentCalls:
+        m_Calls: []
+  - name: Goal Reached
+    gameEvent: {fileID: 11400000, guid: 952f78a03ae4cd84d9d8246b056136c4, type: 2}
+    response:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 891653671067714682}
+          m_TargetAssemblyTypeName: UnityEngine.Renderer, UnityEngine
+          m_MethodName: set_material
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 1a7d4c1800e3e124b92a4e945aeb81ab, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 3730228078272976513}
+          m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+          m_MethodName: set_enabled
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    responseForSentString:
+      m_PersistentCalls:
+        m_Calls: []
+    responseForSentInt:
+      m_PersistentCalls:
+        m_Calls: []
+    responseForSentFloat:
+      m_PersistentCalls:
+        m_Calls: []
+    responseForSentBool:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!108 &3730228078272976513
 Light:
   m_ObjectHideFlags: 0
@@ -138,7 +277,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0, g: 1, b: 0.5137255, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0
   m_Range: 1
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
