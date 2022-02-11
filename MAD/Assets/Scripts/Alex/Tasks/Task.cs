@@ -15,14 +15,13 @@ public class Task : ScriptableObject
     public TaskConfig taskConfig;
 
     // Event that this task defines to be triggered
-    // * We default the method LoadSceneEvent fromthe TaskSystem class
-    // * This static method broadcasts the onLoadSceneEvent on the task system
-    // * Also passes in the taskName as the scene to load
-    private event Action<string> taskEvent = TaskSystem.LoadSceneEvent;
+    private event Action<string> taskEvent; 
 
     // Invoke the subscribed task event, passing in the taskName as parameter
     public void invokeTaskEvent()
     {
-        taskEvent?.Invoke(taskName);
+        taskEvent += TaskSystem.LoadSceneEvent; // The method LoadSceneEvent is subscribed to the taskEvent event. This creates an extra dependency: Task -> TaskSystem. Just something to keep in mind
+        taskEvent?.Invoke(taskName);            // If the event has at least one subscrier, then invoke the event with the taskName
+        taskEvent -= TaskSystem.LoadSceneEvent; // Unsubscribe the method ...LoadSceneEvent from the event taskEvent
     }
 }

@@ -21,10 +21,7 @@ public class TaskSystem : Singleton
     public static event Action<string> onLoadSceneEvent; // Define event that gets "broadcasted"
     public static void LoadSceneEvent(string scene) // method that "broadcasts" the event
     {
-        if(onLoadSceneEvent != null) // if there is at least one observer subscribed to the event
-        {
-            onLoadSceneEvent(scene); // broadcast the event
-        }
+        onLoadSceneEvent?.Invoke(scene); // broadcast the event
     }
 
 

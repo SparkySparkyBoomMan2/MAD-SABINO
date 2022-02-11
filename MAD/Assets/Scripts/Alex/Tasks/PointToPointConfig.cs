@@ -19,4 +19,12 @@ public class PointToPointConfig : TaskConfig
         goalPosition  = new Vector3(0,0,0);
         startPosition = new Vector3(0,0,0); 
     }
+
+    public override void Print()
+    {
+        base.Print();
+        Debug.Log(" - home: " + homePosition);
+        Debug.Log(" - start: " + startPosition);
+        Debug.Log(" - goal: " + goalPosition);
+    }
 }
