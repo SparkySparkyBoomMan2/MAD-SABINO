@@ -6,8 +6,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName="Task Configuration/ Point to Point", fileName ="New Task Config")]
 public class PointToPointConfig : TaskConfig
 {
-    // (x,y,z) position coordiantes for the home, start, and goal locations
-    public Vector3 homePosition;
+    // (x,y,z) position coordiantes for the start and goal locations
     public Vector3 goalPosition;
     public Vector3 startPosition;
 
@@ -15,8 +14,14 @@ public class PointToPointConfig : TaskConfig
     public override void reset()
     {
         base.reset();
-        homePosition  = new Vector3(0,0,0);
         goalPosition  = new Vector3(0,0,0);
         startPosition = new Vector3(0,0,0); 
+    }
+
+    public override void Print()
+    {
+        base.Print();
+        Debug.Log(" - start: " + startPosition);
+        Debug.Log(" - goal: " + goalPosition);
     }
 }

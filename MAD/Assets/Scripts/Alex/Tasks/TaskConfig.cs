@@ -14,7 +14,7 @@ public abstract class TaskConfig : ScriptableObject
     // Set the values back to their empty/zero value
     public virtual void reset()
     {
-        useTable = false;
+        useTable = true;
         repeatNumber = 0;
     }
 
@@ -26,6 +26,14 @@ public abstract class TaskConfig : ScriptableObject
         {
             repeatNumber--;
         }
+    }
+
+    // Print out the state of this configuration
+    public virtual void Print()
+    {
+        Debug.Log("##### Configuration ######");
+        Debug.Log(" - useTable: " + useTable);
+        Debug.Log(" - repeatNumber: " + repeatNumber);
     }
 }
 

@@ -4,24 +4,25 @@ using UnityEngine;
 
 public class Goal : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    // Inspector-assigned event to be invoked when the goal is "reached"
+    public GameEvent goalEvent;
+    public GameEvent goalReset;
     void OnTriggerEnter(Collider col)
     {
         // Debug.Log("Name is:[" + col.name + "]");
         if(col.tag == "UserHand")
         {
+            goalEvent?.Raise();
             Debug.Log("[" + col.name + "] is touching the goal sphere!");
         }
     }
+
+    // void OnTriggerExit(Collider col)
+    // {
+    //     if(col.tag == "UserHand")
+    //     {
+    //         goalReset?.Raise();
+    //         // Debug.Log("[" + col.name + "] is leaving the goal sphere!");
+    //     }
+    // }
 }

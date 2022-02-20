@@ -9,10 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 964e0ff0ceb7c3048807a79bed1cd46b, type: 3}
-  m_Name: PointToPoint
+  m_Script: {fileID: 11500000, guid: 061fef26ce5fb464b832c75aaf21c4fc, type: 3}
+  m_Name: Test
   m_EditorClassIdentifier: 
-  useTable: 1
-  repeatNumber: 0
-  goalPosition: {x: 0, y: 0, z: 0}
-  startPosition: {x: 0, y: 0, z: 0}
+  taskName: Test
+  taskConfig: {fileID: 11400000, guid: 55765093c7be7f7419007d7602b919d7, type: 2}
