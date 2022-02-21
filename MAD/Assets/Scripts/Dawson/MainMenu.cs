@@ -17,11 +17,6 @@ public class MainMenu : MonoBehaviour
         
     }
 
-    public void TaskSelector(string task)
-    {
-        SceneManager.LoadScene(task);
-    }
-
     public void OpenOptions()
     {
 
