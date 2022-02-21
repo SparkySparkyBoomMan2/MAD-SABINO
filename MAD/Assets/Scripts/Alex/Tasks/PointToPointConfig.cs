@@ -14,8 +14,8 @@ public class PointToPointConfig : TaskConfig
     public override void reset()
     {
         base.reset();
-        goalPosition  = new Vector3(0,0,0);
-        startPosition = new Vector3(0,0,0); 
+        goalPosition  = new Vector3(0f,0f,0f);
+        startPosition = new Vector3(0f,0f,0f); 
     }
 
     public override void Print()

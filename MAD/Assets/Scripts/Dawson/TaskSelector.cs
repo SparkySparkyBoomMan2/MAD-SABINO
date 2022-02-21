@@ -16,10 +16,5 @@ public class TaskSelector : MonoBehaviour
     {
 
     }
-
-    public void LoadTask(string task)
-    {
-        SceneManager.LoadScene(task);
-    }
 }
 
