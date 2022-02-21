@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: Assets/Scenes/Alex/Home.unity
+    path: 
     guid: 164e0cb0851ba4943bc9e4bff2322520
   - enabled: 1
     path: Assets/Scenes/Alex/Tasks/PointToPoint.unity
@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Dawson/TaskSelector.unity
     guid: 6a58afebeba969c418e91c36cad87b6f
+  - enabled: 1
+    path: Assets/Scenes/Dawson/PointToPointConfig.unity
+    guid: 7d2ef67905def644daf94c52800a724a
   m_configObjects: {}

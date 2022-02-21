@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 061fef26ce5fb464b832c75aaf21c4fc, type: 3}
   m_Name: PointToPoint
   m_EditorClassIdentifier: 
-  taskName: PointToPoint
+  taskName: PointToPointConfig
   taskConfig: {fileID: 11400000, guid: 55765093c7be7f7419007d7602b919d7, type: 2}
