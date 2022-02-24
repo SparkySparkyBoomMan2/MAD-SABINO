@@ -194,6 +194,7 @@ MonoBehaviour:
   rotateSpeed: 50
   rightControl: 0
   isUpper: 0
+  isLower: 0
 --- !u!1 &250253173
 GameObject:
   m_ObjectHideFlags: 0
@@ -242,6 +243,7 @@ MonoBehaviour:
   rotateSpeed: 50
   rightControl: 1
   isUpper: 0
+  isLower: 1
 --- !u!114 &250253176
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -343,6 +345,7 @@ MonoBehaviour:
   rotateSpeed: 50
   rightControl: 1
   isUpper: 0
+  isLower: 0
 --- !u!114 &462623584
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -414,6 +417,7 @@ MonoBehaviour:
   rotateSpeed: 50
   rightControl: 0
   isUpper: 1
+  isLower: 0
 --- !u!114 &584204100
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -485,6 +489,7 @@ MonoBehaviour:
   rotateSpeed: 50
   rightControl: 0
   isUpper: 0
+  isLower: 1
 --- !u!114 &789461918
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -693,6 +698,7 @@ MonoBehaviour:
   rotateSpeed: 50
   rightControl: 1
   isUpper: 1
+  isLower: 0
 --- !u!114 &1373902682
 MonoBehaviour:
   m_ObjectHideFlags: 0

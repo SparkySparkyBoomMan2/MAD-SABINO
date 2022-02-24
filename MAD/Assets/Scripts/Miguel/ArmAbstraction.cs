@@ -64,7 +64,7 @@ public class ArmAbstraction : MonoBehaviour
         {
             rightRig.SetActive(false);
             leftRig.SetActive(true);
-            Upper.rightControl = Lower.rightControl = Hand.rightControl = true;
+            Upper.leftOnly = Lower.leftOnly = Hand.leftOnly = true;
 
             PartInit(part);
         }
@@ -72,7 +72,7 @@ public class ArmAbstraction : MonoBehaviour
         {
             rightRig.SetActive(true);
             leftRig.SetActive(true);
-            Upper.rightControl = Lower.rightControl = Hand.rightControl = false;
+            Upper.leftOnly = Lower.leftOnly = Hand.leftOnly = false;
 
             PartInit(part);
 
@@ -83,7 +83,7 @@ public class ArmAbstraction : MonoBehaviour
         {
             rightRig.SetActive(true);
             leftRig.SetActive(false);
-            Upper.rightControl = Lower.rightControl = Hand.rightControl = false;
+            Upper.leftOnly = Lower.leftOnly = Hand.leftOnly = false;
 
             PartInit(part);
         }
