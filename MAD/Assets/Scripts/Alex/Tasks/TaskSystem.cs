@@ -19,6 +19,12 @@ public class TaskSystem : Singleton
 
     // Events?
     public static event Action<string, TaskConfig> onLoadSceneEvent; // Define event that gets "broadcasted"
+    public static event Action onReloadEvent;
+
+    public static void ReloadEvent()
+    {
+        onReloadEvent?.Invoke();
+    }
     public static void LoadSceneEvent(string scene, TaskConfig tconf) // method that "broadcasts" the event
     {
         onLoadSceneEvent?.Invoke(scene, tconf); // broadcast the event
@@ -41,6 +47,13 @@ public class TaskSystem : Singleton
         }
 
         Debug.LogErrorFormat("Task System: [" + targetScene + "] is NOT a scene in build settings");
+    }
+
+    private IEnumerator Reload()
+    {
+        yield return new WaitForSeconds(1.5f);
+        UnloadSceneAsync(SceneManager.GetActiveScene().name);
+        LoadSceneAsync(SceneManager.GetActiveScene().name);
     }
 
     // Inspired heavily from...
@@ -72,6 +85,27 @@ public class TaskSystem : Singleton
         // Begin loading the scene asynchonously
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName);
         
+        // Wait for the scene to finish loading
+        while(!asyncLoad.isDone)
+        {
+            yield return null;
+        }
+    }
+
+        // Loads a scene correpsonding to the name passed in, asynchronously
+    private IEnumerator UnloadSceneAsync(string sceneName)
+    {
+        // Begin loading the scene asynchonously
+        AsyncOperation asyncLoad = SceneManager.UnloadSceneAsync(sceneName);
+        
+        // Wait for the scene to finish loading
+        while(!asyncLoad.isDone)
+        {
+            yield return null;
+        }
+
+        asyncLoad = Resources.UnloadUnusedAssets();
+
         // Wait for the scene to finish loading
         while(!asyncLoad.isDone)
         {

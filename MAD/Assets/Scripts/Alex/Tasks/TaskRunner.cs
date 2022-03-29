@@ -8,6 +8,8 @@ public class TaskRunner : MonoBehaviour
     // General TaskConfig scritable object that can be assigned any task config in the inspector
     public TaskConfig taskConfig;
 
+    public PointToPointConfig taskConfigCopy;
+
     public GameEvent moveGoal, moveStart, moveHome;
 
     public GameEvent 
@@ -28,11 +30,12 @@ public class TaskRunner : MonoBehaviour
     // public List<GameEvent> gameEventsPublic = new List<GameEvent>();
 
     // private List<GameEvent> gameEvents = new List<GameEvent>();
+    private event Action reloadEvent;
 
     void Start()
     {
         // Copy the task configuration
-        var taskConfigCopy = Instantiate(taskConfig) as PointToPointConfig;
+        taskConfigCopy = Instantiate(taskConfig) as PointToPointConfig;
         //taskConfigCopy.startPosition = new Vector3(0.0f, 0.5f, 0.0f);
         //taskConfigCopy.Print();
 
@@ -66,21 +69,32 @@ public class TaskRunner : MonoBehaviour
 
         moveHome.sentVec3 = new Vector3(homePos.x, homePos.y, homePos.z);
         moveHome.Raise();
-
-        // Vector3 newGoal = (goal.x + goalPos.x, goal.y + goalPos.y, goal.z + goalPos.z);
-        // Vector3 newStart = (start.x + startPos.x, start.y + startPos.y, start.z + startPos.z);
-        // Vector3 newHome = (home.x + homePos.x, home.y + homePos.y, home.z + homePos.z);
     }
      
     public void Run()
     {
+        resetAll();
+
+        goToHome.Raise();
+        // The event listener on TaskRunner takes care of the rest
+        // each iteration/loop will come back to here!
+    }
+
+    private void resetAll()
+    {
         resetGoal.Raise();
         resetStart.Raise();
         resetHome.Raise();
+    }
 
-        goToHome.Raise();
-        
-
+    public void ReloadScene()
+    {
+        if(taskConfigCopy.repeatNumber > 0) {
+            taskConfigCopy.decrementRepeat();
+            reloadEvent += TaskSystem.ReloadEvent;
+            reloadEvent?.Invoke();
+            reloadEvent -= TaskSystem.ReloadEvent;
+        }
     }
 
 

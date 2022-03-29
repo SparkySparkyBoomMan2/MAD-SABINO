@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: PointToPoint
   m_EditorClassIdentifier: 
   useTable: 1
-  repeatNumber: 0
+  repeatNumber: 2
   goalPosition: {x: 0, y: 0, z: 0}
-  startPosition: {x: 0, y: 0, z: 0}
+  startPosition: {x: 0, y: 0.5, z: 0}
+  homePosition: {x: 0, y: 0, z: 0}
