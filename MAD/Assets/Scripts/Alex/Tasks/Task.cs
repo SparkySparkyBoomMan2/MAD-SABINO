@@ -15,13 +15,13 @@ public class Task : ScriptableObject
     public TaskConfig taskConfig;
 
     // Event that this task defines to be triggered
-    private event Action<string> taskEvent; 
+    private event Action<string, TaskConfig> taskEvent; 
 
     // Invoke the subscribed task event, passing in the taskName as parameter
     public void invokeTaskEvent()
     {
         taskEvent += TaskSystem.LoadSceneEvent; // The method LoadSceneEvent is subscribed to the taskEvent event. This creates an extra dependency: Task -> TaskSystem. Just something to keep in mind
-        taskEvent?.Invoke(taskName);            // If the event has at least one subscrier, then invoke the event with the taskName
+        taskEvent?.Invoke(taskName, taskConfig);            // If the event has at least one subscrier, then invoke the event with the taskName
         taskEvent -= TaskSystem.LoadSceneEvent; // Unsubscribe the method ...LoadSceneEvent from the event taskEvent
     }
 }

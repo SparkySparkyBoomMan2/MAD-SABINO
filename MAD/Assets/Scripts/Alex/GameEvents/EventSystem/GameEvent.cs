@@ -16,6 +16,8 @@ public class GameEvent : ScriptableObject
     public float sentFloat;
     public bool sentBool;
 
+    public Vector3 sentVec3;
+
     // List of event listerners, i.e., action to be taken when the game event is raised
     private List<EventListener> eventListeners = new List<EventListener>();
 

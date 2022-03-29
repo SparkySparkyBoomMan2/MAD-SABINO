@@ -70,6 +70,8 @@ public class EventAndResponse
     public ResponseWithFloat responseForSentFloat;
     public ResponseWithBool responseForSentBool;
 
+    public ResponseWithVec3 responseForSentVec3;
+
     public void EventRaised()
     {
         // default/generic
@@ -102,6 +104,12 @@ public class EventAndResponse
             responseForSentBool.Invoke(gameEvent.sentBool);
         }
 
+        // vec3
+        if (responseForSentVec3.GetPersistentEventCount() >= 1)
+        {
+            responseForSentVec3.Invoke(gameEvent.sentVec3);
+        }
+
     }
 }
 
@@ -122,5 +130,10 @@ public class ResponseWithFloat : UnityEvent<float>
 
 [System.Serializable]
 public class ResponseWithBool : UnityEvent<bool>
+{
+}
+
+[System.Serializable]
+public class ResponseWithVec3 : UnityEvent<Vector3>
 {
 }

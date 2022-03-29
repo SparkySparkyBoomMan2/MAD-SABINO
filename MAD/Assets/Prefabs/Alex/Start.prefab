@@ -32,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 426396786707907008}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.248, y: 9.815, z: -9.316}
-  m_LocalScale: {x: 0.2493613, y: 0.2493613, z: 0.2493613}
+  m_LocalScale: {x: 0.21282986, y: 0.21282986, z: 0.21282986}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -157,7 +157,7 @@ MonoBehaviour:
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
-            m_BoolArgument: 1
+            m_BoolArgument: 0
           m_CallState: 2
         - m_Target: {fileID: 426396786707906878}
           m_TargetAssemblyTypeName: UnityEngine.Renderer, UnityEngine
@@ -195,11 +195,38 @@ MonoBehaviour:
     responseForSentBool:
       m_PersistentCalls:
         m_Calls: []
+    responseForSentVec3:
+      m_PersistentCalls:
+        m_Calls: []
   - name: Go To Start
     gameEvent: {fileID: 11400000, guid: 2060edf658452c1489489ceabba94a72, type: 2}
     response:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: -7049373444589725956}
+          m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+          m_MethodName: set_enabled
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 426396786707906878}
+          m_TargetAssemblyTypeName: UnityEngine.Renderer, UnityEngine
+          m_MethodName: set_sharedMaterial
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: ddd635d4d5797654d9656704337f20a5, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
     responseForSentString:
       m_PersistentCalls:
         m_Calls: []
@@ -208,20 +235,11 @@ MonoBehaviour:
         m_Calls: []
     responseForSentFloat:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: -7049373444589725956}
-          m_TargetAssemblyTypeName: UnityEngine.Light, UnityEngine
-          m_MethodName: set_intensity
-          m_Mode: 0
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
     responseForSentBool:
+      m_PersistentCalls:
+        m_Calls: []
+    responseForSentVec3:
       m_PersistentCalls:
         m_Calls: []
   - name: Start Reached
@@ -265,6 +283,41 @@ MonoBehaviour:
     responseForSentBool:
       m_PersistentCalls:
         m_Calls: []
+    responseForSentVec3:
+      m_PersistentCalls:
+        m_Calls: []
+  - name: Move Start
+    gameEvent: {fileID: 11400000, guid: 2bec75928120c244985e8785b4ed2b35, type: 2}
+    response:
+      m_PersistentCalls:
+        m_Calls: []
+    responseForSentString:
+      m_PersistentCalls:
+        m_Calls: []
+    responseForSentInt:
+      m_PersistentCalls:
+        m_Calls: []
+    responseForSentFloat:
+      m_PersistentCalls:
+        m_Calls: []
+    responseForSentBool:
+      m_PersistentCalls:
+        m_Calls: []
+    responseForSentVec3:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 426396786707906876}
+          m_TargetAssemblyTypeName: UnityEngine.Transform, UnityEngine
+          m_MethodName: Translate
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!108 &-7049373444589725956
 Light:
   m_ObjectHideFlags: 0
@@ -272,13 +325,13 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 426396786707907008}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 0.45882356, g: 0.65882355, b: 1, a: 1}
-  m_Intensity: 0
-  m_Range: 1
+  m_Color: {r: 0.68235296, g: 0.6901961, b: 1, a: 1}
+  m_Intensity: 1.75
+  m_Range: 0.25
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -309,17 +362,17 @@ Light:
       e33: 1
     m_UseCullingMatrixOverride: 0
   m_Cookie: {fileID: 0}
-  m_DrawHalo: 0
+  m_DrawHalo: 1
   m_Flare: {fileID: 0}
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 1
+  m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
+  m_BounceIntensity: 0
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}

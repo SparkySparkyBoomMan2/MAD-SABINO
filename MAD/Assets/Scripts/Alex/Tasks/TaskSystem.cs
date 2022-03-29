@@ -18,16 +18,16 @@ public class TaskSystem : Singleton
     private static List<string> sceneListInBuild = new List<string>();
 
     // Events?
-    public static event Action<string> onLoadSceneEvent; // Define event that gets "broadcasted"
-    public static void LoadSceneEvent(string scene) // method that "broadcasts" the event
+    public static event Action<string, TaskConfig> onLoadSceneEvent; // Define event that gets "broadcasted"
+    public static void LoadSceneEvent(string scene, TaskConfig tconf) // method that "broadcasts" the event
     {
-        onLoadSceneEvent?.Invoke(scene); // broadcast the event
+        onLoadSceneEvent?.Invoke(scene, tconf); // broadcast the event
     }
 
 
     // Loads a specifc task scene, if it exists in the build settings
     // ***** SCENE MUST BE IN BUILD SETTINGS TO WORK *****
-    private void LoadScene(string targetScene)
+    private void LoadScene(string targetScene, TaskConfig tconf)
     {
         // foreach (var sName in sceneListInBuild)
         // {
