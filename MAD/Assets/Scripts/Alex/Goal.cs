@@ -23,12 +23,12 @@ public class Goal : MonoBehaviour
     //     gameObject.transform.Translate(offset);
     // }
 
-    // void OnTriggerExit(Collider col)
-    // {
-    //     if(col.tag == "UserHand")
-    //     {
-    //         goalReset?.Raise();
-    //         // Debug.Log("[" + col.name + "] is leaving the goal sphere!");
-    //     }
-    // }
+    void OnTriggerExit(Collider col)
+    {
+        if(col.tag == "UserHand")
+        {
+            goalReset?.Raise();
+            // Debug.Log("[" + col.name + "] is leaving the goal sphere!");
+        }
+    }
 }

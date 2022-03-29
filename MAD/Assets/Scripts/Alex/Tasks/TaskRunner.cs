@@ -8,7 +8,7 @@ public class TaskRunner : MonoBehaviour
     // General TaskConfig scritable object that can be assigned any task config in the inspector
     public TaskConfig taskConfig;
 
-    public PointToPointConfig taskConfigCopy;
+    private PointToPointConfig taskConfigCopy;
 
     public GameEvent moveGoal, moveStart, moveHome;
 
@@ -31,6 +31,7 @@ public class TaskRunner : MonoBehaviour
 
     // private List<GameEvent> gameEvents = new List<GameEvent>();
     private event Action reloadEvent;
+    private event Action<string, TaskConfig> loadScene;
 
     void Start()
     {
@@ -82,6 +83,7 @@ public class TaskRunner : MonoBehaviour
 
     private void resetAll()
     {
+        Debug.Log("Resetting all");
         resetGoal.Raise();
         resetStart.Raise();
         resetHome.Raise();
@@ -89,12 +91,28 @@ public class TaskRunner : MonoBehaviour
 
     public void ReloadScene()
     {
+        // Debug.Log("YUAYA try to reload!");
+        // Wait(3.5f);
+        resetAll();
+        
         if(taskConfigCopy.repeatNumber > 0) {
+            Debug.Log("reloading!");
             taskConfigCopy.decrementRepeat();
             reloadEvent += TaskSystem.ReloadEvent;
             reloadEvent?.Invoke();
             reloadEvent -= TaskSystem.ReloadEvent;
+            Debug.Log("repeat num: " + taskConfigCopy.repeatNumber);
         }
+        else{
+            loadScene += TaskSystem.LoadSceneEvent;
+            loadScene?.Invoke("MainMenu", null);
+            loadScene -= TaskSystem.LoadSceneEvent;
+        }
+    }
+
+    private IEnumerator Wait(float sec)
+    {
+        yield return new WaitForSeconds(sec);
     }
 
 

@@ -33,7 +33,7 @@ public class TaskSystem : Singleton
 
     // Loads a specifc task scene, if it exists in the build settings
     // ***** SCENE MUST BE IN BUILD SETTINGS TO WORK *****
-    private void LoadScene(string targetScene, TaskConfig tconf)
+    private void LoadScene(string targetScene, TaskConfig tconf=null)
     {
         // foreach (var sName in sceneListInBuild)
         // {
@@ -51,9 +51,13 @@ public class TaskSystem : Singleton
 
     private IEnumerator Reload()
     {
-        yield return new WaitForSeconds(1.5f);
         UnloadSceneAsync(SceneManager.GetActiveScene().name);
-        LoadSceneAsync(SceneManager.GetActiveScene().name);
+        
+
+        LoadScene(SceneManager.GetActiveScene().name);
+        //LoadScene("MainMenu");
+
+        yield return new WaitForSeconds(1.5f);
     }
 
     // Inspired heavily from...
@@ -97,14 +101,6 @@ public class TaskSystem : Singleton
     {
         // Begin loading the scene asynchonously
         AsyncOperation asyncLoad = SceneManager.UnloadSceneAsync(sceneName);
-        
-        // Wait for the scene to finish loading
-        while(!asyncLoad.isDone)
-        {
-            yield return null;
-        }
-
-        asyncLoad = Resources.UnloadUnusedAssets();
 
         // Wait for the scene to finish loading
         while(!asyncLoad.isDone)
