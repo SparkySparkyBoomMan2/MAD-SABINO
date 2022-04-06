@@ -30,8 +30,8 @@ public class TaskRunner : MonoBehaviour
     // public List<GameEvent> gameEventsPublic = new List<GameEvent>();
 
     // private List<GameEvent> gameEvents = new List<GameEvent>();
-    private event Action reloadEvent;
-    private event Action<string, TaskConfig> loadScene;
+    // private event Action reloadEvent;
+    //private event Action<string, TaskConfig> loadScene;
 
     void Start()
     {
@@ -92,22 +92,22 @@ public class TaskRunner : MonoBehaviour
     public void ReloadScene()
     {
         // Debug.Log("YUAYA try to reload!");
-        // Wait(3.5f);
-        resetAll();
+        // // Wait(3.5f);
+        // resetAll();
         
-        if(taskConfigCopy.repeatNumber > 0) {
-            Debug.Log("reloading!");
-            taskConfigCopy.decrementRepeat();
-            reloadEvent += TaskSystem.ReloadEvent;
-            reloadEvent?.Invoke();
-            reloadEvent -= TaskSystem.ReloadEvent;
-            Debug.Log("repeat num: " + taskConfigCopy.repeatNumber);
-        }
-        else{
-            loadScene += TaskSystem.LoadSceneEvent;
-            loadScene?.Invoke("MainMenu", null);
-            loadScene -= TaskSystem.LoadSceneEvent;
-        }
+        // if(taskConfigCopy.repeatNumber > 0) {
+        //     Debug.Log("reloading!");
+        //     taskConfigCopy.decrementRepeat();
+        //     reloadEvent += TaskSystem.ReloadEvent;
+        //     reloadEvent?.Invoke();
+        //     reloadEvent -= TaskSystem.ReloadEvent;
+        //     Debug.Log("repeat num: " + taskConfigCopy.repeatNumber);
+        // }
+        // else{
+        //     //loadScene += TaskSystem.LoadSceneEvent;
+        //     //loadScene?.Invoke("MainMenu");
+        //     //loadScene -= TaskSystem.LoadSceneEvent;
+        // }
     }
 
     private IEnumerator Wait(float sec)

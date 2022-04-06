@@ -8,20 +8,48 @@ using UnityEngine.Events;
 [CreateAssetMenu(menuName="Task", fileName ="New Task")]
 public class Task : ScriptableObject
 {
-    // Name of the task (this will be the name of the scene to be loaded too)
+    // Name of the Task.
+    // i.e., the name of the scene to load
     public string taskName;
 
-    // Specialied class for holding data specific to the configuration for this task
-    public TaskConfig taskConfig;
+    // Specialied class for holding config info
+    // public TaskConfig taskConfig;
 
     // Event that this task defines to be triggered
-    private event Action<string, TaskConfig> taskEvent; 
+    private event Action<string> _taskEvent;
 
-    // Invoke the subscribed task event, passing in the taskName as parameter
-    public void invokeTaskEvent()
+
+    // Invoke the subscribed task event
+    public void taskSceneLoad()
     {
-        taskEvent += TaskSystem.LoadSceneEvent; // The method LoadSceneEvent is subscribed to the taskEvent event. This creates an extra dependency: Task -> TaskSystem. Just something to keep in mind
-        taskEvent?.Invoke(taskName, taskConfig);            // If the event has at least one subscrier, then invoke the event with the taskName
-        taskEvent -= TaskSystem.LoadSceneEvent; // Unsubscribe the method ...LoadSceneEvent from the event taskEvent
+        /*
+         * _taskEvent is an event which allows us to point to a function to call.
+         *
+         * When this function is called, it will point _taskEvent to 
+         * TaskSystem's LoadScene() method.
+         *
+         * Then, it will invoke the _taskEvent, which calls any function that "points" to it.
+         *
+         *
+         */
+        _taskEvent += TaskSystem.LoadSceneEvent; 
+        _taskEvent?.Invoke(taskName);
+        _taskEvent -= TaskSystem.LoadSceneEvent; 
+    }
+
+    // Invoke the subscribed task event
+    public void taskConfigLoad()
+    {
+        /*
+         * _taskEvent is an event which allows us to point to a function to call.
+         *
+         * When this function is called, it will point _taskEvent to 
+         * TaskSystem's LoadScene() method.
+         *
+         * Then, it will invoke the _taskEvent, which calls any function that "points" to it.
+         */
+        _taskEvent += TaskSystem.LoadSceneEvent; 
+        _taskEvent?.Invoke(taskName + "Config");
+        _taskEvent -= TaskSystem.LoadSceneEvent; 
     }
 }

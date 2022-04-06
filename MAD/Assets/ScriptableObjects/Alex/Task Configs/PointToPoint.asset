@@ -15,5 +15,5 @@ MonoBehaviour:
   useTable: 1
   repeatNumber: 2
   goalPosition: {x: 0, y: 0, z: 0}
-  startPosition: {x: 0, y: 0.25, z: 0}
+  startPosition: {x: 0, y: 0, z: 0}
   homePosition: {x: 0, y: 0, z: 0}

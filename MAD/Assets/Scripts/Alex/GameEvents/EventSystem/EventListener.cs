@@ -6,7 +6,7 @@ using UnityEngine.Events;
 //using SubjectNerd.Utilities;
 
 /* 
-    Code inspired heavily from Stephen McVicker's work
+    Code from Stephen McVicker's work
     https://github.com/StephenMcVicker/Unity-ScriptableObjects-Game-Events-
 */
 public class EventListener : MonoBehaviour

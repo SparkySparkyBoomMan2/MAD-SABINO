@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 /* 
-    Code inspired heavily from Stephen McVicker's work
+    Code from Stephen McVicker's work
     https://github.com/StephenMcVicker/Unity-ScriptableObjects-Game-Events-
 */
 

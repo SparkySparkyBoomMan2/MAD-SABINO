@@ -10,30 +10,29 @@ public class TaskSystem : Singleton
     {
         // On start, get all scenes in the build settings, and add to a list
         GetAllScenes(sceneListInBuild);
-        onLoadSceneEvent += LoadScene; // Subscribe the load scene method to the load scene event
+        onLoadSceneEvent += LoadScene; 
     }
 
-    // Private list to store all scenes in the build settings
-    // - Static, so there is only one instance of this List and it is shared
+    // store all scenes in the build settings
     private static List<string> sceneListInBuild = new List<string>();
 
     // Events?
-    public static event Action<string, TaskConfig> onLoadSceneEvent; // Define event that gets "broadcasted"
-    public static event Action onReloadEvent;
+    public static event Action<string, TaskConfig> onLoadSceneEvent;
 
-    public static void ReloadEvent()
-    {
-        onReloadEvent?.Invoke();
-    }
-    public static void LoadSceneEvent(string scene, TaskConfig tconf) // method that "broadcasts" the event
+    public static void LoadSceneEvent(string scene, TaskConfig tconf=null) // method that "broadcasts" the event
     {
         onLoadSceneEvent?.Invoke(scene, tconf); // broadcast the event
+    }
+
+    public static void LoadSceneEvent(string scene) // method that "broadcasts" the event
+    {
+        onLoadSceneEvent?.Invoke(scene, null); // broadcast the event
     }
 
 
     // Loads a specifc task scene, if it exists in the build settings
     // ***** SCENE MUST BE IN BUILD SETTINGS TO WORK *****
-    private void LoadScene(string targetScene, TaskConfig tconf=null)
+    private void LoadScene(string targetScene, TaskConfig tconf)
     {
         // foreach (var sName in sceneListInBuild)
         // {
@@ -49,21 +48,8 @@ public class TaskSystem : Singleton
         Debug.LogErrorFormat("Task System: [" + targetScene + "] is NOT a scene in build settings");
     }
 
-    private IEnumerator Reload()
-    {
-        UnloadSceneAsync(SceneManager.GetActiveScene().name);
-        
-
-        LoadScene(SceneManager.GetActiveScene().name);
-        //LoadScene("MainMenu");
-
-        yield return new WaitForSeconds(1.5f);
-    }
-
-    // Inspired heavily from...
     // http://answers.unity.com/answers/1394340/view.html
     // Loop through all scenes in the build settings, and add the scene names to a list
-    // ... passed in as an argument
     private void GetAllScenes(List<string> sceneList) 
     {
         int sceneCount = SceneManager.sceneCountInBuildSettings;
@@ -71,15 +57,12 @@ public class TaskSystem : Singleton
         // For each scene
         for(int i = 0; i < sceneCount; i++) 
         {
-            // - find the path which the scene in the build settings is stored at
             string scenePath = SceneUtility.GetScenePathByBuildIndex(i);
-
-            // - serach the path, to find the index of the final level the actual scene is stored at
-            int slashIndex = scenePath.LastIndexOf("/");
+            int idx = scenePath.LastIndexOf("/");
 
             // - take a substring of the scene name from "/SceneTest.blah", to "SceneTest"
             // - ... and add it to the list
-            sceneListInBuild.Add(scenePath.Substring(slashIndex+1, scenePath.LastIndexOf(".") - slashIndex-1));
+            sceneListInBuild.Add(scenePath.Substring(idx+1, scenePath.LastIndexOf(".") - idx-1));
         }
     }
 
@@ -96,13 +79,13 @@ public class TaskSystem : Singleton
         }
     }
 
-        // Loads a scene correpsonding to the name passed in, asynchronously
+    // Unloads a scene correpsonding to the name passed in, asynchronously
     private IEnumerator UnloadSceneAsync(string sceneName)
     {
-        // Begin loading the scene asynchonously
+        // Begin unloading the scene asynchonously
         AsyncOperation asyncLoad = SceneManager.UnloadSceneAsync(sceneName);
 
-        // Wait for the scene to finish loading
+        // Wait for the scene to finish unloading
         while(!asyncLoad.isDone)
         {
             yield return null;
