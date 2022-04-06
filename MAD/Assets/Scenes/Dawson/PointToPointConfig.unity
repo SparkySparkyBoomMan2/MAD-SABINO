@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -778,6 +778,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47fee5f098a80f5428b862c9425dd7c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskConfig: {fileID: 11400000, guid: e1a2c407a6737cf4ebedfe6696ae0dda, type: 2}
   sliderUI: {fileID: 1529389560}
 --- !u!114 &194605354
 MonoBehaviour:
@@ -1104,6 +1105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47fee5f098a80f5428b862c9425dd7c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskConfig: {fileID: 11400000, guid: e1a2c407a6737cf4ebedfe6696ae0dda, type: 2}
   sliderUI: {fileID: 743752281}
 --- !u!114 &248270758
 MonoBehaviour:
@@ -2684,6 +2686,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47fee5f098a80f5428b862c9425dd7c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskConfig: {fileID: 11400000, guid: e1a2c407a6737cf4ebedfe6696ae0dda, type: 2}
   sliderUI: {fileID: 1081906603}
 --- !u!114 &790041562
 MonoBehaviour:
@@ -4112,6 +4115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47fee5f098a80f5428b862c9425dd7c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskConfig: {fileID: 11400000, guid: e1a2c407a6737cf4ebedfe6696ae0dda, type: 2}
   sliderUI: {fileID: 514282494}
 --- !u!114 &1170532287
 MonoBehaviour:
@@ -5532,6 +5536,7 @@ GameObject:
   - component: {fileID: 1662277055}
   - component: {fileID: 1662277054}
   - component: {fileID: 1662277053}
+  - component: {fileID: 1662277052}
   m_Layer: 5
   m_Name: PointToPointConfig
   m_TagString: Untagged
@@ -5539,6 +5544,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1662277052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1662277051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f924addf0c33b08408b8cba7e9accf48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tConf: {fileID: 11400000, guid: e1a2c407a6737cf4ebedfe6696ae0dda, type: 2}
 --- !u!114 &1662277053
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7043,6 +7061,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47fee5f098a80f5428b862c9425dd7c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskConfig: {fileID: 11400000, guid: e1a2c407a6737cf4ebedfe6696ae0dda, type: 2}
   sliderUI: {fileID: 1914294886}
 --- !u!114 &2011575929
 MonoBehaviour:
@@ -7342,6 +7361,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47fee5f098a80f5428b862c9425dd7c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskConfig: {fileID: 11400000, guid: e1a2c407a6737cf4ebedfe6696ae0dda, type: 2}
   sliderUI: {fileID: 1066740072}
 --- !u!114 &2105176905
 MonoBehaviour:

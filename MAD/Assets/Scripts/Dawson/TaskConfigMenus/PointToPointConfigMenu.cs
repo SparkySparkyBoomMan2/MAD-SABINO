@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class PointToPointConfigMenu : MonoBehaviour
 {
     //NOTE: I wanted to wait for Alex to look at the code before adding the following line in, as well as the subsequent lines:
-    //PointToPointConfig pointToPointConfig;
+    public TaskConfig taskConfig;
     public Slider sliderUI;
     private Text textSliderValue;
 
@@ -16,40 +16,51 @@ public class PointToPointConfigMenu : MonoBehaviour
     /// </summary>
     public void SliderChanged()
     {
+        var pConf = taskConfig.conf as PointToPointConfig;
+        if (pConf == null)
+            return;
+        
         switch (sliderUI.name)
         { 
             case "StartPosX":
                 //pointToPointConfig.startPosition.x = sliderUI.value;
-                Debug.Log("Debug message:" + sliderUI.name + sliderUI.value);
+                // Debug.Log("Debug message:" + sliderUI.name + sliderUI.value);
+                pConf.startX = sliderUI.value;
+                // Debug.Log("Debug message pconf!: " + pConf.startX);
                 break;
 
             case "StartPosY":
                 //pointToPointConfig.startPosition.y = sliderUI.value;
-                Debug.Log("Debug message:" + sliderUI.name + sliderUI.value);
+                // Debug.Log("Debug message:" + sliderUI.name + sliderUI.value);
+                pConf.startY = sliderUI.value;
                 break;
 
             case "StartPosZ":
                 //pointToPointConfig.startPosition.z = sliderUI.value;
-                Debug.Log("Debug message:" + sliderUI.name + sliderUI.value);
+                // Debug.Log("Debug message:" + sliderUI.name + sliderUI.value);
+                pConf.startZ = sliderUI.value;
                 break;
 
             case "GoalPosX":
                 //pointToPointConfig.goalPosition.x = sliderUI.value;
-                Debug.Log("Debug message:" + sliderUI.name + sliderUI.value);
+                // Debug.Log("Debug message:" + sliderUI.name + sliderUI.value);
+                pConf.goalX = sliderUI.value;
                 break;
             
             case "GoalPosY":
                 //pointToPointConfig.goalPosition.y = sliderUI.value;
-                Debug.Log("Debug message:" + sliderUI.name + sliderUI.value); ;
+                // Debug.Log("Debug message:" + sliderUI.name + sliderUI.value); ;
+                pConf.goalY = sliderUI.value;
                 break;
 
             case "GoalPosZ":
                 //pointToPointConfig.goalPosition.z = sliderUI.value;
-                Debug.Log("Debug message:" + sliderUI.name + sliderUI.value); 
+                // Debug.Log("Debug message:" + sliderUI.name + sliderUI.value); 
+                pConf.goalZ = sliderUI.value;
                 break;
 
             default:
-                Debug.Log("[ERROR] Error receiving slider data. Name: " + sliderUI.name);
+                // Debug.Log("[ERROR] Error receiving slider data. Name: " + sliderUI.name);
                 break;
         }
 
@@ -67,8 +78,8 @@ public class PointToPointConfigMenu : MonoBehaviour
     void Start()
     {
         textSliderValue = GetComponent<Text>();
-        SliderChanged();
-        ShowSliderValue();
+        // SliderChanged();
+        // ShowSliderValue();
     }
 
     // Update is called once per frame

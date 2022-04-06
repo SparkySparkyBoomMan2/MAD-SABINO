@@ -1,11 +1,9 @@
 fileFormatVersion: 2
-guid: 47fee5f098a80f5428b862c9425dd7c2
+guid: 5d243af6fd2310f4789fa2773a47220d
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences:
-  - taskConfig: {fileID: 11400000, guid: e1a2c407a6737cf4ebedfe6696ae0dda, type: 2}
-  - sliderUI: {instanceID: 0}
+  defaultReferences: []
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
