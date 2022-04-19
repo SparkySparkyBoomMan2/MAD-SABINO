@@ -7,11 +7,11 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 0
     path: 
-    guid: 164e0cb0851ba4943bc9e4bff2322520
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Alex/Tasks/PointToPoint.unity
     guid: bf2cd34c97f66504db4cf15b019545e2
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Alex/TaskMenu.unity
     guid: 7e7140bd99500de48b08922c96e37f18
   - enabled: 1
@@ -23,4 +23,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Dawson/PointToPointConfig.unity
     guid: 7d2ef67905def644daf94c52800a724a
+  - enabled: 1
+    path: Assets/Scenes/Miguel/MVTest2.unity
+    guid: f1fe4d007ee2c4f45b5c2cb948e9c51c
+  - enabled: 1
+    path: Assets/Scenes/Miguel/Experimental (Temp)Config.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects: {}

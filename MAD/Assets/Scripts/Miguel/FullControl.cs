@@ -9,12 +9,12 @@ public class FullControl : MonoBehaviour
 
     void Start()
     {
-        w = new Vector3(0, 0, 0.001f);
-        s = new Vector3(0, 0, -0.001f);
-        a = new Vector3(-0.001f, 0, 0);
-        d = new Vector3(0.001f, 0, 0);
-        e = new Vector3(0, 0.001f, 0);
-        q = new Vector3(0, -0.001f, 0);
+        w = new Vector3(0, 0, 0.002f);
+        s = new Vector3(0, 0, -0.002f);
+        a = new Vector3(-0.002f, 0, 0);
+        d = new Vector3(0.002f, 0, 0);
+        e = new Vector3(0, 0.002f, 0);
+        q = new Vector3(0, -0.002f, 0);
     }
 
     public void ResetTarget()
