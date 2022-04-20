@@ -17,14 +17,14 @@ public class Config {
     public virtual void reset()
     {
         useTable = true;
-        repeatNumber = 0;
+        repeatNumber = 0; // i.e. repeat 0 times (run only once)
     }
 
     // To be called when repeating a task
     // Decrements the number of times to repeat by -1
     public void decrementRepeat()
     {
-        if(repeatNumber > 0)
+        if(repeatNumber > -1)
         {
             repeatNumber--;
         }
