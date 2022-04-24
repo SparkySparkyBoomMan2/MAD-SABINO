@@ -14,7 +14,7 @@ public class ButtonScript : MonoBehaviour
         Button thisButton = GetComponent<Button>();
 
         // Set the text of the button to name specfied in the Task
-        thisButton.GetComponentInChildren<TextMeshProUGUI>().SetText(task.taskName, true);
+        //thisButton.GetComponentInChildren<TextMeshProUGUI>().SetText(task.taskName, true);  // Commented out MIGUEL VILLANUEVA, 4/24
         
         // Set the onclick function of the button to load the task scene
         // thisButton.onClick.AddListener(() => task.taskScene());
