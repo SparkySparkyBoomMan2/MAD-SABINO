@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class SendThoseBalls : MonoBehaviour
 {
     public TaskConfig taskConfig;
     public GameObject homeBall, startBall, goalBall;
+    public int taskRepeats = 2; // Edit 4/23
+    public TMP_InputField input;    // Edit 4/24
 
     private float initHomeX, initHomeY, initHomeZ;
     private float initStartX, initStartY, initStartZ;
@@ -43,5 +47,17 @@ public class SendThoseBalls : MonoBehaviour
         pConf.goalX = goalBall.transform.position.x - initGoalX;
         pConf.goalY = goalBall.transform.position.y - initGoalY;
         pConf.goalZ = goalBall.transform.position.z - initGoalZ;
+
+        // Edit 4/24 ---> This is forsaken, too much trouble was caused here (it works though)
+        //string temp = input.GetComponent<TextMeshProUGUI>().text;
+        //temp = temp.Replace("\\n", "");
+        //("[" + temp + "]");
+        //if (!string.IsNullOrEmpty(temp) && int.TryParse(temp, out int num))
+        if (int.TryParse(input.text, out int num))
+        {
+            print("You de winna");
+            taskRepeats = num;
+        }
+        pConf.repeats = taskRepeats;    // Edit 4/23
     }
 }

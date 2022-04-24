@@ -47,6 +47,7 @@ public class PointToPointConfig : Config {
     public float goalX, goalY, goalZ;
     public float startX, startY, startZ;
     public float homeX, homeY, homeZ;
+    public int repeats; // MIGUEL VILLANUEVA
 
     public PointToPointConfig()
     {   

@@ -347,12 +347,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 198711590}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 147c53901dee32940ad5c41986705b9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  task: {fileID: 11400000, guid: 0bcf1c3b42b69a9458dc949beb0c9cae, type: 2}
+  task: {fileID: 0}
 --- !u!1 &492354379
 GameObject:
   m_ObjectHideFlags: 0
@@ -1334,7 +1334,7 @@ GameObject:
   - component: {fileID: 1643074890}
   - component: {fileID: 1643074893}
   m_Layer: 5
-  m_Name: Point2PointButton
+  m_Name: Button1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1454,7 +1454,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 147c53901dee32940ad5c41986705b9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  task: {fileID: 11400000, guid: 8d00acd91e14a6d469aaf4036ba37117, type: 2}
+  task: {fileID: 11400000, guid: 0bcf1c3b42b69a9458dc949beb0c9cae, type: 2}
 --- !u!1 &1895445271
 GameObject:
   m_ObjectHideFlags: 0

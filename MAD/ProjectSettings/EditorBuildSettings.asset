@@ -27,7 +27,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Miguel/MVTest2.unity
     guid: f1fe4d007ee2c4f45b5c2cb948e9c51c
   - enabled: 1
-    path: Assets/Scenes/Miguel/Experimental (Temp)Config.unity
+    path: Assets/Scenes/Miguel/Point To PointConfig.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
     path: Assets/Scenes/Alex/Tasks/PointToPoint.unity
