@@ -5,13 +5,13 @@ using UnityEngine;
 public class PointToPointTR : TaskRunner
 {
     [SerializeField]
-    private GameEvent moveGoal, moveStart, moveHome;
-
-    [SerializeField]
-    private GameEvent 
+    private GameEvent moveGoal, moveStart, moveHome,
         goToGoal, goToStart, goToHome, 
         goalReached, startReached, homeReached,
-        resetGoal, resetStart, resetHome;
+        resetGoal, resetStart, resetHome,
+        stopTask;
+
+    private PointToPointConfig pConf;
 
     public override void Start()
     {
@@ -26,7 +26,8 @@ public class PointToPointTR : TaskRunner
             if (taskConfig.conf == null)
                 taskConfig.conf = new PointToPointConfig();
 
-            var pConf = taskConfig.conf as PointToPointConfig;
+            pConf = taskConfig.conf as PointToPointConfig;
+            pConf.Print();
 
             moveGoal.sentVec3 = new Vector3(pConf.goalX, pConf.goalY, pConf.goalZ);
             moveGoal.Raise();
@@ -45,11 +46,19 @@ public class PointToPointTR : TaskRunner
 
     public override void Run()
     {
-        resetAll();
+        Debug.Log("hello there");
+        if(pConf.repeatNumber > -1) {
+            pConf.decrementRepeat();
+            resetAll();
 
-        goToHome.Raise();
-        // The event listener on TaskRunner takes care of the rest
-        // each iteration/loop will come back to here!
+            goToHome.Raise();
+            // The event listener on TaskRunner takes care of the rest
+            // each iteration/loop will come back to here!
+        }
+        else {
+            // gameEvents["Stop Task"].Raise();
+            stopTask.Raise();
+        }
     }
 
     public override void resetAll()

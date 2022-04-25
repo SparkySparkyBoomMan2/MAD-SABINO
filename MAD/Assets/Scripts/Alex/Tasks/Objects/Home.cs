@@ -13,7 +13,7 @@ public class Home : MonoBehaviour
         if(col.tag == "UserHand")
         {
             homeEvent?.Raise();
-            Debug.Log("[" + col.name + "] is touching the home sphere!");
+            //Debug.Log("[" + col.name + "] is touching the home sphere!");
         }
     }
 

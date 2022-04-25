@@ -3781,7 +3781,7 @@ PrefabInstance:
     - target: {fileID: 3603231874839410573, guid: 8db739e67973ce844b1a5e158adc397a, type: 3}
       propertyPath: eventAndResponses.Array.data[2].response.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1503713652}
+      objectReference: {fileID: 1503713650}
     - target: {fileID: 3603231874839410573, guid: 8db739e67973ce844b1a5e158adc397a, type: 3}
       propertyPath: eventAndResponses.Array.data[2].response.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -3808,7 +3808,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3603231874839410573, guid: 8db739e67973ce844b1a5e158adc397a, type: 3}
       propertyPath: eventAndResponses.Array.data[2].response.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: ExpPointToPointTR, Assembly-CSharp
+      value: PointToPointTR, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3603231874839410573, guid: 8db739e67973ce844b1a5e158adc397a, type: 3}
       propertyPath: eventAndResponses.Array.data[2].response.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
@@ -3939,7 +3939,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1503713651}
   - component: {fileID: 1503713650}
-  - component: {fileID: 1503713652}
   - component: {fileID: 1503713649}
   m_Layer: 0
   m_Name: TaskRunner
@@ -4144,7 +4143,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1503713648}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5d243af6fd2310f4789fa2773a47220d, type: 3}
   m_Name: 
@@ -4162,6 +4161,7 @@ MonoBehaviour:
   resetGoal: {fileID: 11400000, guid: e0d759213d3930649835ddfc3550d1b4, type: 2}
   resetStart: {fileID: 11400000, guid: ed7eddad941e3da4b99d00a96ae1faa8, type: 2}
   resetHome: {fileID: 11400000, guid: 52d7910dfc71dc345a63e6c09fb74eb5, type: 2}
+  stopTask: {fileID: 11400000, guid: 379333afe003380488d707c6627aac0c, type: 2}
 --- !u!4 &1503713651
 Transform:
   m_ObjectHideFlags: 0
@@ -4176,19 +4176,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1503713652
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1503713648}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5952fe0c14ab0b4ea50965b1a0e48b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  taskConfig: {fileID: 11400000, guid: e1a2c407a6737cf4ebedfe6696ae0dda, type: 2}
 --- !u!1 &1513149066
 GameObject:
   m_ObjectHideFlags: 0
