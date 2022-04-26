@@ -13,7 +13,7 @@ public class Goal : MonoBehaviour
         if(col.tag == "UserHand")
         {
             goalEvent?.Raise();
-            Debug.Log("[" + col.name + "] is touching the goal sphere!");
+            // Debug.Log("[" + col.name + "] is touching the goal sphere!");
         }
     }
 

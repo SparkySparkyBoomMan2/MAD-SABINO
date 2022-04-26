@@ -11,6 +11,8 @@ public class SendThoseBalls : MonoBehaviour
     public int taskRepeats = 2; // Edit 4/23
     public TMP_InputField input;    // Edit 4/24
 
+    public Toggle toggleHome; // Alex Peña 4/26/22
+
     private float initHomeX, initHomeY, initHomeZ;
     private float initStartX, initStartY, initStartZ;
     private float initGoalX, initGoalY, initGoalZ;
@@ -57,7 +59,10 @@ public class SendThoseBalls : MonoBehaviour
         {
             print("You de winna");
             taskRepeats = num;
+            pConf.runs = taskRepeats;    // Edit 4/23 // Alex Peña 4/25/22
         }
-        pConf.repeats = taskRepeats;    // Edit 4/23
+        // pConf.runs = taskRepeats;    // Edit 4/23 // Alex Peña 4/25/22
+
+        pConf.useHome = toggleHome.isOn;
     }
 }

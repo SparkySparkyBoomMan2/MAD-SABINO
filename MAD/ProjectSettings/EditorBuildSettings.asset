@@ -21,7 +21,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Dawson/TaskSelector.unity
     guid: 6a58afebeba969c418e91c36cad87b6f
   - enabled: 1
-    path: Assets/Scenes/Dawson/PointToPointConfig.unity
+    path: Assets/Scenes/Dawson/Deprecated/PointToPointConfig.unity
     guid: 7d2ef67905def644daf94c52800a724a
   - enabled: 1
     path: Assets/Scenes/Miguel/MVTest2.unity
@@ -30,6 +30,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Miguel/Point To PointConfig.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
-    path: Assets/Scenes/Alex/Tasks/PointToPoint.unity
+    path: Assets/Scenes/Alex/Tasks/Old2PointToPoint.unity
     guid: 1dda7f7db86689c49a936d9acc30ec1e
+  - enabled: 1
+    path: Assets/Scenes/Miguel/OLDPoint To Point.unity
+    guid: 1b16be0ea1cc5704cadf928eb78ac38b
+  - enabled: 1
+    path: Assets/Scenes/Alex/Tasks/Point To Point.unity
+    guid: 4fa37ba048541a845bc59259a63fb90f
   m_configObjects: {}

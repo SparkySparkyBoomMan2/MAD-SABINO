@@ -13,7 +13,7 @@ public class Starting : MonoBehaviour
         if(col.tag == "UserHand")
         {
             startEvent?.Raise();
-            Debug.Log("[" + col.name + "] is touching the start sphere!");
+            // Debug.Log("[" + col.name + "] is touching the start sphere!");
         }
     }
 
