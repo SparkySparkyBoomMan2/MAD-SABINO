@@ -8,19 +8,19 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Alex/Tasks/OldPointToPoint.unity
     guid: bf2cd34c97f66504db4cf15b019545e2
   - enabled: 0
     path: 
-    guid: 7e7140bd99500de48b08922c96e37f18
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Dawson/MainMenu.unity
     guid: 784739ba2f806fd42b1314da06710c82
   - enabled: 1
     path: Assets/Scenes/Dawson/TaskSelector.unity
     guid: 6a58afebeba969c418e91c36cad87b6f
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Dawson/Deprecated/PointToPointConfig.unity
     guid: 7d2ef67905def644daf94c52800a724a
   - enabled: 1
@@ -29,13 +29,37 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Miguel/Point To PointConfig.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Alex/Tasks/Old2PointToPoint.unity
     guid: 1dda7f7db86689c49a936d9acc30ec1e
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Miguel/OLDPoint To Point.unity
     guid: 1b16be0ea1cc5704cadf928eb78ac38b
   - enabled: 1
     path: Assets/Scenes/Alex/Tasks/Point To Point.unity
     guid: 4fa37ba048541a845bc59259a63fb90f
+  - enabled: 1
+    path: Assets/Scenes/Miguel/AdductionConfig.unity
+    guid: 6967ea374bdb967439f1be721864fe4b
+  - enabled: 1
+    path: Assets/Scenes/Miguel/Shoulder ExtensionFlexionConfig.unity
+    guid: 5037f5e55fce0124b96724d5435999ca
+  - enabled: 1
+    path: Assets/Scenes/Miguel/InternalExternal RotationConfig.unity
+    guid: 9bd0d60639cf3284f982c80d2b9174ea
+  - enabled: 1
+    path: Assets/Scenes/Miguel/Elbow FlexionExtensionConfig.unity
+    guid: 879af5d74f198e644bc7a45f8536d6ca
+  - enabled: 1
+    path: Assets/Scenes/Miguel/Forarm PronationSupinationConfig.unity
+    guid: 001b1d18d9bc02b479abcad45cbb92d7
+  - enabled: 1
+    path: Assets/Scenes/Miguel/Wrist FlexionExtensionConfig.unity
+    guid: 6be7e3e7fc4a7034585172c39bfc8db0
+  - enabled: 1
+    path: Assets/Scenes/Miguel/Wrist RadialUlnar DeviationConfig.unity
+    guid: f9c20ed37e9c8e343873bbc5311f729f
+  - enabled: 1
+    path: Assets/Scenes/Miguel/Adduction.unity
+    guid: 35224af1620155a4499670030a766380
   m_configObjects: {}
