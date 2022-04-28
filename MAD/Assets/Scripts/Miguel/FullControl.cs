@@ -6,15 +6,16 @@ public class FullControl : MonoBehaviour
 {
     public GameObject target;
     private Vector3 w, s, a, d, e, q;
+    private float speed = 0.3f;
 
     void Start()
     {
-        w = new Vector3(0, 0, 0.002f);
-        s = new Vector3(0, 0, -0.002f);
-        a = new Vector3(-0.002f, 0, 0);
-        d = new Vector3(0.002f, 0, 0);
-        e = new Vector3(0, 0.002f, 0);
-        q = new Vector3(0, -0.002f, 0);
+        w = new Vector3(0, 0, speed * Time.deltaTime);
+        s = new Vector3(0, 0, -speed * Time.deltaTime);
+        a = new Vector3(-speed * Time.deltaTime, 0, 0);
+        d = new Vector3(speed * Time.deltaTime, 0, 0);
+        e = new Vector3(0, speed * Time.deltaTime, 0);
+        q = new Vector3(0, -speed * Time.deltaTime, 0);
     }
 
     public void ResetTarget()
