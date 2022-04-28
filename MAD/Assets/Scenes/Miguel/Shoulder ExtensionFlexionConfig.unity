@@ -7857,7 +7857,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Shoulder Adduction Task
+  m_text: 'Shoulder Extension/Flexion Task
 
 '
   m_isRightToLeft: 0

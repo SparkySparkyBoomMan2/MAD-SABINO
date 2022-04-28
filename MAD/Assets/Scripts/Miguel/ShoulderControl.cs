@@ -6,17 +6,21 @@ public class ShoulderControl : MonoBehaviour
 {
     public float rotateSpeed = 75f;
     public bool right = true;
-    private Vector3 e, q;
+    private Vector3 e, q, w, s;
 
     void Start()
     {
         e = new Vector3(0, 0, 1);
         q = new Vector3(0, 0, -1);
+        w = new Vector3(0, 1, 0);
+        s = new Vector3(0, -1, 0);
 
         if (!right)
         {
             e = new Vector3(0, 0, -1);
             q = new Vector3(0, 0, 1);
+            w = new Vector3(0, -1, 0);
+            s = new Vector3(0, 1, 0);
         }
     }
 
@@ -28,8 +32,8 @@ public class ShoulderControl : MonoBehaviour
         if (Input.GetKey(KeyCode.Q))
             this.transform.Rotate(q * rotateSpeed * Time.deltaTime);
         if (Input.GetKey(KeyCode.W))
-            this.transform.Rotate(e * rotateSpeed * Time.deltaTime);
+            this.transform.Rotate(w * rotateSpeed * Time.deltaTime);
         if (Input.GetKey(KeyCode.S))
-            this.transform.Rotate(q * rotateSpeed * Time.deltaTime);
+            this.transform.Rotate(s * rotateSpeed * Time.deltaTime);
     }
 }

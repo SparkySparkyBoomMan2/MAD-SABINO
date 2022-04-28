@@ -65,7 +65,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Miguel/Shoulder ExtensionFlexion.unity
     guid: 607a5190af5441a479a26a694d5ce673
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Miguel/MVTestScene.unity
     guid: 150602183166d39468a940083286f853
   m_configObjects: {}
