@@ -12,8 +12,8 @@ public class ShoulderControl : MonoBehaviour
     {
         e = new Vector3(0, 0, 1);
         q = new Vector3(0, 0, -1);
-        w = new Vector3(0, 1, 0);
-        s = new Vector3(0, -1, 0);
+        w = new Vector3(0, -1, 0);
+        s = new Vector3(0, 1, 0);
 
         if (!right)
         {
