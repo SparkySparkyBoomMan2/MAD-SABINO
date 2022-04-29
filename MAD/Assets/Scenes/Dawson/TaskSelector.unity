@@ -1895,7 +1895,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Internal/Extension Rotation
+  m_text: 'Internal/External Rotation
 
 '
   m_isRightToLeft: 0
