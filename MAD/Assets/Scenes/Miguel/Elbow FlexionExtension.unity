@@ -8705,15 +8705,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2933709058715745879, guid: b816022280710dc4c9f0b5d0b3942477, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.59
+      value: 0.94
       objectReference: {fileID: 0}
     - target: {fileID: 2933709058715745879, guid: b816022280710dc4c9f0b5d0b3942477, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10.81
+      value: 14.335
       objectReference: {fileID: 0}
     - target: {fileID: 2933709058715745879, guid: b816022280710dc4c9f0b5d0b3942477, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -9.69
+      value: -10.265
       objectReference: {fileID: 0}
     - target: {fileID: 2933709058715745879, guid: b816022280710dc4c9f0b5d0b3942477, type: 3}
       propertyPath: m_LocalRotation.w
@@ -8749,7 +8749,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2933709058715745960, guid: b816022280710dc4c9f0b5d0b3942477, type: 3}
       propertyPath: m_Range
-      value: 8
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 2933709058715745960, guid: b816022280710dc4c9f0b5d0b3942477, type: 3}
       propertyPath: m_BoundingSphereOverride.w
@@ -10541,7 +10541,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 77.55214
+  field of view: 67.67275
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -10566,13 +10566,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1427502262}
-  m_LocalRotation: {x: 0.2763564, y: -0.41786245, z: 0.13508669, w: 0.8548507}
-  m_LocalPosition: {x: 0.36, y: 10.75, z: -9.98}
+  m_LocalRotation: {x: 0.1369132, y: -0.57449985, z: 0.09820106, w: 0.80097514}
+  m_LocalPosition: {x: 0.62, y: 10.768, z: -9.84}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 35.83, y: -52.1, z: 0}
+  m_LocalEulerAnglesHint: {x: 19.4, y: -71.3, z: 0}
 --- !u!1 &1442868559
 GameObject:
   m_ObjectHideFlags: 0

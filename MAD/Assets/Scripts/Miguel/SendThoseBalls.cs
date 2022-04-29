@@ -57,7 +57,7 @@ public class SendThoseBalls : MonoBehaviour
         //if (!string.IsNullOrEmpty(temp) && int.TryParse(temp, out int num))
         if (int.TryParse(input.text, out int num))
         {
-            print("You de winna");
+            //print("You de winna");
             taskRepeats = num;
             pConf.runs = taskRepeats;    // Edit 4/23 // Alex Peña 4/25/22
         }

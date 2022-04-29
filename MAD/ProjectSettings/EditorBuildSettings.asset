@@ -51,7 +51,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Miguel/Elbow FlexionExtensionConfig.unity
     guid: 879af5d74f198e644bc7a45f8536d6ca
   - enabled: 1
-    path: Assets/Scenes/Miguel/Forarm PronationSupinationConfig.unity
+    path: Assets/Scenes/Miguel/Forearm PronationSupinationConfig.unity
     guid: 001b1d18d9bc02b479abcad45cbb92d7
   - enabled: 1
     path: Assets/Scenes/Miguel/Wrist FlexionExtensionConfig.unity
@@ -68,4 +68,13 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Miguel/MVTestScene.unity
     guid: 150602183166d39468a940083286f853
+  - enabled: 1
+    path: Assets/Scenes/Miguel/InternalExternal Rotation.unity
+    guid: beb6295d10aeb594bb5f3800a312335e
+  - enabled: 1
+    path: Assets/Scenes/Miguel/Elbow FlexionExtension.unity
+    guid: 9dcef21e9091b57409a00bc134812c85
+  - enabled: 1
+    path: Assets/Scenes/Miguel/Forearm PronationSupination.unity
+    guid: b3ec02b91f121054282e1a51b9358c74
   m_configObjects: {}
