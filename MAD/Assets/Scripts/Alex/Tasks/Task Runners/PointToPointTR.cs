@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+// Inheirts from the base class TaskRunner
 public class PointToPointTR : TaskRunner
 {
+
+    // All of these are events, this is how we communicate and make actions happen within the task environment
     [SerializeField]
     private GameEvent moveGoal, moveStart, moveHome,
         goToGoal, goToStart, goToHome, 
@@ -12,6 +15,7 @@ public class PointToPointTR : TaskRunner
         resetGoal, resetStart, resetHome,
         stopTask, hideHome;
 
+    // A private referernce to the specifc type of config this task uses
     private PointToPointConfig pConf;
 
     /* Default values for testing from inspector. 
@@ -20,12 +24,7 @@ public class PointToPointTR : TaskRunner
     public int runTaskCount = 1;         // MIGUEL VILLANUEVA, 4/23
     public bool useHome = true;
 
-    /* These are all located and caled in the event listener */
-    // private int count = 1;                  // MIGUEL VILLANUEVA, 4/23
-    // public GameObject home, start, goal;    // MIGUEL VILLANUEVA, 4/23
-    // public GameObject taskRunner;           // MIGUEL VILLANUEVA, 4/23
-    // public Material donePlastic;            // MIUGEL VILLANUEVA, 4/23
-    // public GameObject Panel;// MIUGEL VILLANUEVA, 4/23 
+    // Variables to track the running time, and the changing text on screen
     public TMP_Text runText;             // MIGUEL VILLANUEVA, 4/24
     private float timer = 0.0f;             // MIUGEL VILLANUEVA, 4/24
     private bool timerIsRunning = false;    // MIGUEL VILLANUEVA, 4/24
@@ -58,6 +57,8 @@ public class PointToPointTR : TaskRunner
             // (This should only happen when directly running the task from its own scene)
             // (If loaded through the menu as normal, the menu will have created a config)
             if (taskConfig.conf == null) {
+                // taskConfig is the ScriptableObject
+                // .conf is the reference to the specific configuration we are using
                 taskConfig.conf = new PointToPointConfig();
                 pConf = taskConfig.conf as PointToPointConfig;
                 pConf.runs = runTaskCount;
@@ -67,12 +68,15 @@ public class PointToPointTR : TaskRunner
                 pConf = taskConfig.conf as PointToPointConfig;
             }
 
+            // As part of the setup function, we read the x,y,z positions
+            // Then, send these vectors through the moveGoal, moveStart, and moveHome events
             moveGoal.sentVec3 = new Vector3(pConf.goalX, pConf.goalY, pConf.goalZ);
             moveGoal.Raise();
 
             moveStart.sentVec3 = new Vector3(pConf.startX, pConf.startY, pConf.startZ);
             moveStart.Raise();
 
+            // Only setup the home object if the TaskConfig speicifed that the home position is to be used. 
             if(pConf.useHome) {
                 moveHome.sentVec3 = new Vector3(pConf.homeX, pConf.homeY, pConf.homeZ);
                 moveHome.Raise();
@@ -97,10 +101,14 @@ public class PointToPointTR : TaskRunner
     {
         runText.text = pConf.runs.ToString();
         // MIGUEL VILLANUEVA, 4/23 // Alex Peña 5/25
+        // If there are more runs of the task left
         if (pConf.runs > 0)
         {
+            // Decrement the number of runs left, and reset all objects in the scene
             pConf.runs--;
             resetAll();
+
+            // If we are using the home position, raise the event to go there. Else, go to the start position
             if(pConf.useHome)
                 goToHome.Raise();
             else
@@ -113,10 +121,31 @@ public class PointToPointTR : TaskRunner
             float seconds = Mathf.FloorToInt(timer % 60);
             float milliseconds = (timer % 1) * 1000;
 
+            // Raise the event stop 
             stopTask.Raise();
           
             timeText.text = string.Format("{0:0}:{1:00}:{2:000}", minutes, seconds, milliseconds);
             return;
+
+            /* IMPORTANT NOTE 
+             * - The code seen below is extremely important. It is an example of changing objects within the scene. 
+             * - You can see the home, start, and goal materials get set to their "done" material.
+             * - This would require dragging in all objects (home, start, goal,etc) into the inspector, and having all of the code
+             * inside the script to determine what takes place. 
+             * - This code is rightly commented out because our system replaces the need for this. 
+             *
+             * - Instead, we use the goToHome.raise() events format. Calling the ".raise()" function fo an event will indeed, raise it. 
+             * - Upon doing so, any objects in the scene that have the "EventListenerAndResposne" script on them, can drag this event into 
+             * the inspector, and then specify a response for that event. This can be seen in action if you took at the "EventListenerAndResponse"
+             * script placed on the TaskRunner, Goal, Home, and Start objects
+             *
+             *
+             * - Our team truly hopes any future work with different tasks can be built off of this same system, as we beleive it to be quite powerful and modular. 
+             *
+             *
+             *
+            */
+
             /* Alex Pena 4/25/22 */
             // home.GetComponent<MeshRenderer>().material = donePlastic;
             // start.GetComponent<MeshRenderer>().material = donePlastic;

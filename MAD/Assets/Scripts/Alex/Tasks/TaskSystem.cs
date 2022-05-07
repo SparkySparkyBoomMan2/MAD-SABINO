@@ -4,6 +4,7 @@ using UnityEngine;
 using System;
 using UnityEngine.SceneManagement;
 
+// This class handles the loading and switching of scenes
 public class TaskSystem : Singleton
 {
     private void Start()

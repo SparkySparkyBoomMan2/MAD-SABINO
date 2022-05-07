@@ -1,3 +1,6 @@
+####    FROM Stephen McVicker's work
+####    https://github.com/StephenMcVicker/Unity-ScriptableObjects-Game-Events-
+
 # Unity: ScriptableObjects Game Events System
 
 

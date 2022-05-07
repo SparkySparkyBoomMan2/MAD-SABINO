@@ -1,8 +1,20 @@
 using UnityEngine;
 
+// Why ScriptableObject?
+/* Unite Austin 2017 - Game Architecture with Scriptable Objects
+ * https://www.youtube.com/watch?v=6vmRwLYWNRo 
+ *
+ * Unite 2016 - Overthrowing the MonoBehaviour Tyranny in a Glorious Scriptable Object Revolution
+ * https://www.youtube.com/watch?v=raQ3iHhE_Kk&t=1964s
+ */
+ 
+ // This is the scriptable object  which can be created
 [CreateAssetMenu(menuName="Task Configuration", fileName ="New Task Config")]
 public class TaskConfig : ScriptableObject
 {
+        // This is a generic reference to some Configuration.
+        // Childern of the Config class (like PointToPointConfig) can also be stored in this variable.
+        // This is what allows multiple configurations to be stored inside one scriptableobject.
         public Config conf = null;
 }
 

@@ -4,6 +4,13 @@ using System;
 using UnityEngine;
 using UnityEngine.Events;
 
+// Why ScriptableObject?
+/* Unite Austin 2017 - Game Architecture with Scriptable Objects
+ * https://www.youtube.com/watch?v=6vmRwLYWNRo 
+ *
+ * Unite 2016 - Overthrowing the MonoBehaviour Tyranny in a Glorious Scriptable Object Revolution
+ * https://www.youtube.com/watch?v=raQ3iHhE_Kk&t=1964s
+ */
 // Speicalized class for holding data and function references for tasks
 [CreateAssetMenu(menuName="Task", fileName ="New Task")]
 public class Task : ScriptableObject
